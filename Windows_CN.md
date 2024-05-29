@@ -7,11 +7,13 @@
 2. 下载 Ubuntu 的 ISO 文件（推荐 20.04 或更高版本）。
 3. 打开 VMware 并创建一个新的虚拟机，选择下载的 Ubuntu ISO 文件进行安装。
 4. 按照屏幕提示完成 Ubuntu 的安装。
+5. 记得勾选显示所有 USB 输入设备
 
 ### 步骤 2：设置 Ubuntu 并安装 qemu
 
 1. 启动 Ubuntu 虚拟机。
 2. 更新包管理器并安装 qemu：
+
 
 ```bash
 sudo apt-get update
@@ -33,6 +35,8 @@ sudo fdisk -l
 
 ```bash
 sudo mkdir /mnt/sdcard
+
+sudo fdisk -l
 sudo mount /dev/sdb1 /mnt/sdcard
 ```
 
