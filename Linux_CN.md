@@ -12,6 +12,7 @@ cp $(which qemu-arm-static) /mnt/usr/bin
 
 ## 从 x86 chroot
 首先，你需要插入原装 SD 卡并找到 linuxrootfs 和 boot 分区。对于我来说，它们是 /dev/mmcblk0p5 和 /dev/mmcblk0p6。以下命令将 chroot 到 SD 卡。
+
 ```bash
 sudo mount /dev/mmcblk0p5 /mnt
 sudo mount /dev/mmcblk0p6 /mnt/boot
@@ -20,7 +21,9 @@ sudo cp /proc/mounts /mnt/etc/mtab
 sudo mount -o bind /etc/resolv.conf /mnt/etc/resolv.conf
 sudo chroot /mnt qemu-arm-static /bin/bash
 ```
+
 现在在 chroot 环境中执行以下命令
+
 ```bash
 apt install openssh-server
 systemctl enable ssh
